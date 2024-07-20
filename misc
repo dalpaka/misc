@@ -1,0 +1,12 @@
+#! /bin/bash
+echo enter directory name
+# shellcheck disable=SC2162
+read file
+# shellcheck disable=SC2002
+c=$(cat "$file" | wc -c)
+# shellcheck disable=SC2002
+w=$(cat "$file" | wc -w)
+l=$(grep -c "." "$file")
+echo Number of characters in "$file" is "$c"
+echo Number of words in "$file" is "$w"
+echo Number of lines in "$file" is "$l"
