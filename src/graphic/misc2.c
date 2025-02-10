@@ -61,6 +61,7 @@ int main(void)
             ClearBackground(SKYBLUE);
             
             BeginMode3D(camera);
+                DrawPlane((Vector3){ 0, -10, 0 }, (Vector2){ 1000, 1000 }, GREEN); // Simple world plane
             
                 // Draw scene: hills using a sine wave for smooth terrain
                 for (float x = -count * spacing; x <= count * spacing; x += spacing)
@@ -69,6 +70,7 @@ int main(void)
                     {
                         float height = sinf(x * 0.1f) * cosf(z * 0.1f) * 3.0f; // Hill height
                         DrawCube((Vector3) { x, height - 1.0f, z }, spacing, 1, spacing, GREEN);
+                        DrawCubeWires((Vector3) { x, height - 1.0f, z }, spacing, 1, spacing, BLACK);
                     }
                 }
                 
